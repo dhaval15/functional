@@ -3,3 +3,6 @@
 
 ## [0.9.1]
 - Added pipe and collections
+
+## [0.9.2]
+- Added example
