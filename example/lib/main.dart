@@ -2,6 +2,8 @@ import 'package:functional/functional.dart';
 
 int add(int a, int b) => a + b;
 
+String toUpperCase(String s) => s.toUpperCase();
+
 void main() {
   // Currying
   final inc = add % 1;
@@ -9,6 +11,14 @@ void main() {
 
   print(inc(5)); // Same as add(1, 5);
   print(dec(5)); // Same as add(-1, 5);
+
+  // Function Piping
+
+  final convertToUppercaseAndPrint = toUpperCase | print;
+  convertToUppercaseAndPrint('Hello');
+  // Same as print(toUpperCase('Hello'));
+
+  // Collection Piping
 
   [1, 2, 3, 4, 5, 6] | print;
   // Same as [1, 2, 3, 4, 5, 6].forEach((int value) => print(value));
