@@ -6,3 +6,6 @@
 
 ## [0.9.2]
 - Added example
+
+## [0.9.3]
+- README fixed

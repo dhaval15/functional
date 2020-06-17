@@ -7,7 +7,7 @@ Utilities for functional programimng in dart.
 Add this in dependencies of pubspec.yaml
 
 ```yaml
-functional:any
+  functional: ^0.9.3
 ```
 
 ## Import
