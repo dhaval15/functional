@@ -1,0 +1,31 @@
+import 'package:functional/functional.dart';
+
+int add(int a, int b) => a + b;
+
+void main() {
+  // Currying
+  final inc = add % 1;
+  final dec = add % -1;
+
+  print(inc(5)); // Same as add(1, 5);
+  print(dec(5)); // Same as add(-1, 5);
+
+  [1, 2, 3, 4, 5, 6] | print;
+  // Same as [1, 2, 3, 4, 5, 6].forEach((int value) => print(value));
+
+  final incrementedList = [1, 2, 3, 4, 5, 6] ^ inc;
+  // Same as [1, 2, 3, 4, 5, 6].map((int value)=> inc(value));
+
+  print(incrementedList);
+  // Will print : (2, 3, 4, 5, 6, 7)
+
+  incrementedList | print;
+  /* Will print : 
+     2
+     3
+     4
+     5
+     6
+     7
+  */
+}
