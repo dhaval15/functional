@@ -7,7 +7,7 @@ Utilities for functional programimng in dart.
 Add this in dependencies of pubspec.yaml
 
 ```yaml
-  functional: ^0.9.3
+  functional: ^0.9.4
 ```
 
 ## Import
@@ -69,6 +69,26 @@ void main() {
      6
      7
   */
+}
+```
+
+##### Stream Piping
+
+```dart
+
+Stream<int> generate(int start, int end, Duration duration) async* {
+  for (int i = start; i <= end; i++) {
+    yield i;
+    await Future.delayed(duration);
+  }
+}
+
+void main() {
+    
+  final stream = generate(1, 9, Duration(seconds: 1));
+  final subscription = stream | print;
+  // Same as stream.listen((event) => print(event));
+
 }
 ```
 

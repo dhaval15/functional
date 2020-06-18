@@ -1,8 +1,17 @@
+import 'dart:html';
+
 import 'package:functional/functional.dart';
 
 int add(int a, int b) => a + b;
 
 String toUpperCase(String s) => s.toUpperCase();
+
+Stream<int> generate(int start, int end, Duration duration) async* {
+  for (int i = start; i <= end; i++) {
+    yield i;
+    await Future.delayed(duration);
+  }
+}
 
 void main() {
   // Currying
@@ -38,4 +47,9 @@ void main() {
      6
      7
   */
+
+  // Stream piping
+
+  final stream = generate(1, 9, Duration(seconds: 1));
+  final subscription = stream | print;
 }

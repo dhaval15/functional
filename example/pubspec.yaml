@@ -4,7 +4,7 @@ environment:
   sdk: '>=2.7.0 <3.0.0'
 
 dependencies:
-  functional: ^0.9.3
+  functional: ^0.9.4
 
 dev_dependencies:
   pedantic: ^1.8.0
