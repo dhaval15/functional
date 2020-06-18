@@ -1,6 +1,6 @@
 name: functional
 description: A dart package which helps to use varius functional paradigms like function currying, piping.
-version: 0.9.4
+version: 0.9.4+1
 homepage: https://github.com/dhaval15/functional
 
 environment:

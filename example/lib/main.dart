@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:functional/functional.dart';
 
 int add(int a, int b) => a + b;

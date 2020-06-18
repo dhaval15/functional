@@ -11,7 +11,7 @@
 - README fixed
 
 ## [0.9.4]
-- Added Docs
-
-## [0.9.5]
 - Added Stream Piping
+
+## [0.9.4+1]
+- Minor Bug Fixes
