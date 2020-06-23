@@ -4,4 +4,10 @@ extension PipeExtension<T, A, B> on B Function(A) {
       return func(this(value));
     };
   }
+
+  T Function(A value) pipe<T>(T Function(B) func) {
+    return (A value) {
+      return func(this(value));
+    };
+  }
 }
