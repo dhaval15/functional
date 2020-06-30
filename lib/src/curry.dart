@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 extension Curry0Extension<T, A> on T Function(A) {
   T Function() operator %(A a) => () => this(a);
 }
@@ -48,4 +50,31 @@ extension Curry9Extension<T, A, B, C, D, E, F, G, H, I, J> on T Function(
   T Function(B, C, D, E, F, G, H, I, J) operator %(A a) =>
       (B b, C c, D d, E e, F f, G g, H h, I i, J j) =>
           this(a, b, c, d, e, f, g, h, i, j);
+}
+
+extension CurryOptionalExtension<T> on T Function() {
+  T Function([Map<Symbol, dynamic>]) operator %(
+          MapEntry<Symbol, dynamic> parameter) =>
+      ([Map<Symbol, dynamic> params = const {}]) => Function.apply(
+            this,
+            null,
+            HashMap<Symbol, dynamic>.fromEntries(
+                [parameter]..addAll(params.entries)),
+          );
+}
+
+extension CurryOptionalMapExtension<T> on T Function([Map<Symbol, dynamic>]) {
+  T Function([Map<Symbol, dynamic>]) operator %(
+          MapEntry<Symbol, dynamic> parameter) =>
+      ([Map<Symbol, dynamic> params = const {}]) => Function.apply(
+            this,
+            [
+              HashMap<Symbol, dynamic>.fromEntries(
+                  [parameter]..addAll(params.entries))
+            ],
+          );
+}
+
+extension MapEntryExtension on Symbol {
+  MapEntry<Symbol, dynamic> operator [](dynamic value) => MapEntry(this, value);
 }
