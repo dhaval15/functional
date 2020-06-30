@@ -7,7 +7,7 @@ Utilities for functional programimng in dart.
 Add this in dependencies of pubspec.yaml
 
 ```yaml
-  functional: ^0.9.4+1
+functional: ^0.9.4+1
 ```
 
 ## Import
@@ -29,6 +29,21 @@ void main() {
 
   print(inc(5)); // Same as add(1, 5);
   print(dec(5)); // Same as add(-1, 5);
+}
+```
+
+#### Currying For Optional Parameters
+
+```dart
+void printAll({String a, int b, double c}) {
+  print(a);
+  print(b);
+  print(c);
+}
+
+void main() {
+  final func = printAll % #a['Hello'] % #b[2] % #c[4.0];
+  func(); // Same as printAll(a: 'Hello', b: 2, c: 4.0);
 }
 ```
 

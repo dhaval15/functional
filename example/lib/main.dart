@@ -11,6 +11,12 @@ Stream<int> generate(int start, int end, Duration duration) async* {
   }
 }
 
+void printAll({String a, int b, double c}) {
+  print(a);
+  print(b);
+  print(c);
+}
+
 void main() {
   // Currying
   final inc = add % 1;
@@ -18,6 +24,11 @@ void main() {
 
   print(inc(5)); // Same as add(1, 5);
   print(dec(5)); // Same as add(-1, 5);
+
+  // Currying in optional parameters
+
+  final func = printAll % #a['Hello'] % #b[2] % #c[4.0];
+  func(); // Same as printAll(a: 'Hello', b: 2, c: 4.0);
 
   // Function Piping
 
